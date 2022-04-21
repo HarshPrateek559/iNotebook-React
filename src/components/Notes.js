@@ -7,7 +7,10 @@ const Notes = () => {
     const context = useContext(noteContext);
     const { notes, getNotes, editNote } = context;
     useEffect(() => {
-        getNotes()
+       async  function fetchNotes(){
+           await getNotes()
+       }
+       fetchNotes();
         // eslint-disable-next-line
     }, [])
     const ref = useRef(null)
